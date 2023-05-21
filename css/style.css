@@ -653,7 +653,7 @@ span{
 }
 
 .contact form .textarea-field textarea:focus~.focus,
-.contact form .textarea-field textarea:valid~.focus{
+.contact form .textarea-field input:valid~.focus{
     width: 100%;
 }
 
@@ -753,7 +753,7 @@ span{
 
 section:nth-child(odd) .animate.scroll,
 .footer .animate.scroll{
-    background: red;
+    background: var(--second-bg-color);
 }
 
 .education .education-box .animate.scroll{
