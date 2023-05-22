@@ -1,47 +1,19 @@
-// document.getElementById("emailForm").addEventListener("submit", function (event) {
-//     event.preventDefault(); // Prevent form submission
-
-//     var name = document.getElementById("name").value;
-//     var email = document.getElementById("email").value;
-//     var mobile = document.getElementById("mobile").value;
-//     var subject = document.getElementById("subject").value;
-//     var message = document.getElementById("message").value;
-
-//     var requestBody = {
-//         to: "snehasanip@gmail.com",
-//         subject: subject,
-//         body: "Name: " + name + "\nEmail: " + email + "\nMobile: " + mobile + "\nSubject: " + subject + "\nMessage: " + message
-//     };
-
-//     fetch("https://api.brevo.com/v3/smtp/email", {
-//         method: "POST",
-//         headers: {
-//             "Content-Type": "application/json",
-//             "accept": "application/json",
-//             "api-key":"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",
-//         },
-//         body: JSON.stringify(requestBody)
-//     })
-//         .then(function (response) {
-//             if (response.ok) {
-//                 alert("Thank you! Your message has been sent.");
-//                 document.getElementById("name").value = "";
-//                 document.getElementById("email").value = "";
-//                 document.getElementById("mobile").value = "";
-//                 document.getElementById("subject").value = "";
-//                 document.getElementById("message").value = "";
-//             } else {
-//                 alert("Oops! Something went wrong.");
-//             }
-//         })
-//         .catch(function (error) {
-//             alert("Oops! Something went wrong.");
-//             console.error(error);
-//         });
-// });
-
-  
-
+$("#submit-form").submit((e)=>{
+    e.preventDefault()
+    $.ajax({
+        url:"https://script.google.com/macros/s/AKfycbykfdvD_gVzR6d2P9o2vci4YGF8C4JZFpYxz0N392Oh3fCghHh-dnHn2cxGyGhIPWCj/exec",
+        data:$("#submit-form").serialize(),
+        method:"post",
+        success:function (response){
+            alert("Form submitted successfully")
+            window.location.reload()
+            //window.location.href="https://google.com"
+        },
+        error:function (err){
+            alert("Something Error")
+        }
+    })
+})
 
 //toggle icon navbar
 let menuIcon=document.querySelector('#menu-icon');
